@@ -60,7 +60,7 @@ const Footer = () => {
                 <div className="srex-footer__links__content">
                   <ul className="srex-footer__links__list">
                     <li>
-                      <Link to="/about">About US</Link>
+                      <Link to="/about-us">About US</Link>
                     </li>
                     <li>
                       <Link to="/services">Our Service</Link>
@@ -168,7 +168,7 @@ const Footer = () => {
                   <a href="#">Section</a>
                 </li>
                 <li>
-                  <a href="#">About</a>
+                  <Link to="/about-us">About</Link>
                 </li>
               </ul>
             </div>

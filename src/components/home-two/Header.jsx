@@ -127,7 +127,7 @@ const Header = () => {
               {menu.map(({ id, title, submenus, url }) => (
                 <li key={id}>
                   {url ? (
-                    <Link to={title}>{title}</Link>
+                    <Link to={url} onClick={() => setMenuOpen(false)}>{title}</Link>
                   ) : (
                     <>
                       <a href="#" onClick={() => handleOpenSubmenu(id)}>

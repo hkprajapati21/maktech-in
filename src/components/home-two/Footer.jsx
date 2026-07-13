@@ -65,7 +65,7 @@ const Footer = () => {
                 <div className="srex-footer__links__content">
                   <ul className="srex-footer__links__list">
                     <li>
-                      <Link to="/about">About US</Link>
+                      <Link to="/about-us">About US</Link>
                     </li>
                     <li>
                       <Link to="/services">Our Service</Link>

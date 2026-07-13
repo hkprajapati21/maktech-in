@@ -23,7 +23,7 @@ export const menu = [
   {
     id: "2",
     title: "About Us",
-    url: "/about",
+    url: "/about-us",
   },
   {
     id: "3",

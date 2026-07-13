@@ -147,18 +147,18 @@
   justify-content: center;
 }
 .srex-contact--three .srex-contact__img__play-btn i {
-  color: #1d8f2c;
+  color: $primary-color;
   font-size: 30px;
 }
 .srex-contact--three .srex-contact__img__play-btn:hover {
-  background-color: #1d8f2c;
+  background-color: $primary-color;
 }
 .srex-contact--three .srex-contact__img__play-btn:hover i {
   color: #fff;
 }
 .srex-contact--three .srex-section__head__desc {
   margin-bottom: 60px;
-  color: #24231d;
+  color: $text-primary;
   margin-top: 12px;
 }
 .srex-contact--three .srex-contact__left {
@@ -170,7 +170,7 @@
   border: 2px solid #e3e3e3;
 }
 .srex-contact--three .srex-contact__left .srex-btn {
-  background-color: #1d8f2c;
+  background-color: $primary-color;
 }
 .srex-contact--three .srex-contact__left .srex-btn:hover {
   background-color: #ff7029;
@@ -234,7 +234,7 @@
 .srex_contact_content {
 }
 .srex_contact_content h4 {
-  color: #1d8f2c;
+  color: $primary-color;
 }
 .srex_contact_content h1 {
   font-size: 40px;
@@ -251,7 +251,7 @@
 .address_icon i {
   float: left;
   border: 1px solid #ddd;
-  color: #1d8f2c;
+  color: $primary-color;
   width: 60px;
   height: 60px;
   line-height: 60px;
@@ -263,7 +263,7 @@
   transition: 0.3s;
 }
 .srex-single-address:hover .address_icon i {
-  background: #1d8f2c;
+  background: $primary-color;
   color: #fff;
 }
 .srex-single-address h4 {

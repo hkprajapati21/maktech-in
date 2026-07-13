@@ -93,7 +93,7 @@
     }
 
     &__call-two {
-        background: #FF7029;
+        background: $secondary-color;
         padding: 15px 30px;
         span{
             color: $white-color;
@@ -160,7 +160,7 @@
     }
 
     &__call-three {
-        background: #FF7029;
+        background: $secondary-color;
         padding: 15px 30px;
         span{
             color: $white-color;

@@ -8,7 +8,7 @@
   // justify-content: space-between;
   // align-items: center;
   p {
-    color: #24231d;
+    color: $text-primary;
     @media #{$small_mobile} {
       font-size: 10px;
     }

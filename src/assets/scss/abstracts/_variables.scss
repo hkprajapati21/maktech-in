@@ -12,19 +12,20 @@ $ls: '(min-width: 1600px)';
 $big_screen: '(min-width: 1900px)';
 
 /*------------------
-Colors
+Colors — Mechtech brand palette
+Logo: Navy #0C2E4D | Orange #F37121 | Blue #1479B4 | Grey #80868C
 ------------------*/
-$primary-color: #1D8F2C;
-$secondary-color: #FF7029;
+$primary-color: #0C2E4D;
+$secondary-color: #F37121;
+$accent-color: #1479B4;
 
 $white-color: #fff;
 $black-color: #000;
 
+$gray-color: #F0F4F8;
 
-$gray-color: #F8F7F0;
+$text-primary: #0C2E4D;
+$text-secondary: #80868C;
 
-$text-primary: #24231D;
-$text-secondary: #878680;
-
-$border-primary: #2F2E28;
-$border-gray: #e3e3e3;
+$border-primary: #10395D;
+$border-gray: #D9E2EC;

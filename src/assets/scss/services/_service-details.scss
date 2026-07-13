@@ -23,7 +23,7 @@
   margin-top: 5px;
 }
 .single_ser_info a:hover {
-  background: #1d8f2c;
+  background: $primary-color;
   color: #fff;
 }
 .single_brochure {
@@ -39,7 +39,7 @@
 }
 .single_bro_doc h5 {
   text-transform: capitalize;
-  color: #24231d;
+  color: $text-primary;
   letter-spacing: 0;
   margin-top: 0px;
   overflow: hidden;
@@ -59,7 +59,7 @@
   float: right;
   margin-top: -60px;
   font-size: 24px;
-  color: #1d8f2c;
+  color: $primary-color;
 }
 
 .single_pro_details h1 {
@@ -85,7 +85,7 @@
   font-weight: 500;
 }
 .single_pro_details ul li i {
-  background: #1d8f2c;
+  background: $primary-color;
   color: #fff;
   width: 20px;
   height: 20px;
@@ -149,6 +149,6 @@
   margin: 0 2px;
 }
 .spdi_social ul li a:hover {
-  background: #1d8f2c;
+  background: $primary-color;
   color: #fff;
 }

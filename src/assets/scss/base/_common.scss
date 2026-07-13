@@ -36,7 +36,7 @@ a {
 
 a:hover,
 a:focus {
-  color: $text-primary;
+  color: $primary-color;
   text-decoration: none;
 }
 
@@ -477,7 +477,7 @@ input {
     display: flex;
     align-items: center;
     a {
-      color: #24231d;
+      color: $text-primary;
       font-size: 14px;
       font-style: normal;
       font-weight: 800;
@@ -485,7 +485,7 @@ input {
       text-transform: capitalize;
     }
     i {
-      color: #24231d;
+      color: $text-primary;
       margin-left: 15px;
       transition: 0.3s;
     }

@@ -32,6 +32,8 @@
                 width: 100%;
                 height: 100%;
                 border-radius: 20px;
+                object-fit: cover;
+                object-position: center;
             }
         }
 
@@ -47,6 +49,9 @@
     &__right-content {
         &__img {
             border-radius: 20px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
             @media #{$tab_device} {
                 width: 100%;
                 object-fit: cover;

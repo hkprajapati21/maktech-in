@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { siteImages } from "@/assets/data/siteImages";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
 import "../../../node_modules/react-modal-video/scss/modal-video.scss";
@@ -13,7 +14,7 @@ const Video = ({ classes }) => {
             <button onClick={() => setOpen(true)} className="srex-video__play__btn popup-video">
               <i className="fa-solid fa-play"></i>
             </button>
-            <img src="/images/video-section.png" alt="Video" />
+            <img src={siteImages.video.cover} alt="Solar power project in India" />
           </div>
         </div>
       </div>

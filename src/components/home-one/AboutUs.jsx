@@ -1,3 +1,4 @@
+﻿import { siteImages } from "@/assets/data/siteImages";
 import { Link } from "react-router-dom";
 
 const AboutUs = () => {
@@ -31,7 +32,7 @@ const AboutUs = () => {
                     </li>
                     <li>
                       <i className="fa-solid fa-check"></i>
-                      <p>Transparent pricing — no hidden costs, ever</p>
+                      <p>Transparent pricing - no hidden costs, ever</p>
                     </li>
                   </ul>
                 </div>
@@ -44,16 +45,7 @@ const AboutUs = () => {
           </div>
           <div className="col-lg-6 col-12 px-0">
             <div data-aos="fade-up" data-aos-delay="800" className="srex-about-us-one__right">
-              <img src="/images/about-us/about-us.png" alt="About Us" className="srex-about-us-one__right__img " />
-              <div>
-                <div className="srex-about-us-one__right__box d-flex gap-3 ">
-                  <img src="/images/about-us/medal.png" alt="Medal" />
-                  <div className="srex-about-us-one__right__box__text">
-                    <h2>50 MW+</h2>
-                    <p>Installed Capacity</p>
-                  </div>
-                </div>
-              </div>
+              <img src={siteImages.about.main} alt="Solar installation team in India" className="srex-about-us-one__right__img " />
             </div>
           </div>
         </div>

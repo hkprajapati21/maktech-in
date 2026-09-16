@@ -1,3 +1,5 @@
+import { siteImages } from "@/assets/data/siteImages";
+
 const Contact = ({ classes }) => {
   return (
     <section className={`srex-contact--three ${classes}`}>
@@ -5,7 +7,7 @@ const Contact = ({ classes }) => {
         <div className="row srex-contact--three__row">
           <div className="col-lg-6 col-12">
             <div className="srex-contact__img">
-              <img src="/images/home-three/contact-man.png" alt="Contact Man" />
+              <img src={siteImages.about.stepsPerson} alt="Solar consultant in India" />
               <a href="https://www.youtube.com/watch?v=bYsgGkKksvs" className="srex-contact__img__play-btn popup-video">
                 <i className="fa-solid fa-play"></i>
               </a>
@@ -15,10 +17,10 @@ const Contact = ({ classes }) => {
             <div className="srex-contact__left ">
               <div className="srex-section__head ">
                 <h2 data-aos="fade" className="srex-section__head__title">
-                  write here below?
+                  Book Your Free Site Survey
                 </h2>
                 <p data-aos="fade" data-aos-delay="200" className="srex-section__head__desc">
-                  For your car we will do everything advice, repairs and maintenance. We are the some preferred choice by many car owners because our experience
+                  Tell us about your home or business and our solar experts will get back with an honest assessment and next steps.
                 </p>
               </div>
               <form action="#">

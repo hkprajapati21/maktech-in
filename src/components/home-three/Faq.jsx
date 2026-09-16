@@ -1,3 +1,5 @@
+import { siteImages } from "@/assets/data/siteImages";
+
 const Faq = () => {
   return (
     <section className="srex-faq-three srex-section">
@@ -6,7 +8,7 @@ const Faq = () => {
           <div className="col-lg-6 col-12">
             <div className="srex-faq-three__left">
               <div data-aos="fade" className="srex-faq-three__left__img">
-                <img src="/images/home-three/faq/man.png" alt="FAQ M" />
+                <img src={siteImages.about.stepsPerson} alt="Solar expert in India" />
               </div>
               <div data-aos="fade-up" data-aos-delay="200" className="srex-faq-three__left__box d-flex gap-3 ">
                 <img src="/images/medal-green.png" alt="Medal" />

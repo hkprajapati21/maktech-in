@@ -1,38 +1,164 @@
 .srex-question {
-  background: url(/images/home-one/faq/faq-bg.png) no-repeat;
-  padding: 120px 0;
+  background: url(/images/home-one/faq/faq-bg.png) no-repeat center center;
+  background-size: cover;
+  padding: 70px 0;
+
   @media #{$small_mobile} {
-    padding: 170px 0;
-    background-size: cover;
+    padding: 50px 0;
   }
   @media #{$tab_device} {
-    padding: 80px 0;
-    background-size: cover;
+    padding: 60px 0;
   }
+
   &__title {
-    width: 700px;
-    margin: 0 auto;
+    max-width: 720px;
+    margin: 0 auto 28px;
     text-align: center;
+
+    .srex-section__head__badge {
+      color: $primary-color;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+
     h2 {
       color: $white-color;
-    }
-    @media #{$small_mobile} {
-      width: 100%;
+      font-size: 34px;
+      line-height: 1.25;
+
+      @media #{$small_mobile} {
+        font-size: 26px;
+      }
+      @media #{$tab_device} {
+        font-size: 30px;
+      }
     }
   }
 
-  &__left {
-    img {
-      border-radius: 20px;
-      width: 100%;
-      @media #{$small_mobile} {
-        margin-bottom: 40px;
-      }
-      @media #{$tab_device} {
-        margin-bottom: 40px;
-      }
+  &__desc {
+    color: rgba(255, 255, 255, 0.78);
+    margin: 10px auto 0;
+    max-width: 560px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  &__scroll {
+    max-height: 360px;
+    overflow-y: auto;
+    padding-right: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: $secondary-color rgba(255, 255, 255, 0.12);
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $secondary-color;
+      border-radius: 999px;
+    }
+
+    @media #{$small_mobile} {
+      max-height: 420px;
     }
   }
-  &__right {
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__cta {
+    margin-top: 28px;
+
+    p {
+      color: $white-color;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .srex-btn {
+      padding: 12px 24px;
+    }
+  }
+}
+
+.srex-faq-card {
+  background: rgba(12, 46, 77, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 14px 16px;
+  transition: all 0.25s ease;
+
+  &:hover,
+  &.is-open {
+    background: rgba(16, 57, 93, 0.95);
+    border-color: rgba(243, 113, 33, 0.45);
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+    color: $white-color;
+
+    i {
+      margin-left: auto;
+      flex-shrink: 0;
+      color: $primary-color;
+      font-size: 14px;
+    }
+  }
+
+  &__number {
+    flex-shrink: 0;
+    min-width: 38px;
+    height: 34px;
+    padding: 0 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: $primary-color;
+    color: $white-color;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  &.is-open &__number {
+    background: $secondary-color;
+  }
+
+  &__question {
+    margin: 0;
+    color: $white-color;
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: 600;
+    text-transform: none;
+  }
+
+  &__answer {
+    margin: 10px 0 0 50px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    line-height: 1.55;
+
+    @media #{$small_mobile} {
+      margin-left: 0;
+    }
   }
 }

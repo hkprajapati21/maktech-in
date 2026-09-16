@@ -1,5 +1,6 @@
-import Footer from "@/components/home-two/Footer";
 import Header from "@/components/home-two/Header";
+import Footer from "@/components/shared/Footer";
+import WhatsAppButton from "@/components/shared/WhatsAppButton";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Outlet } from "react-router-dom";
 
@@ -10,6 +11,7 @@ const RootLayout = () => {
       <Outlet />
       <ScrollToTop />
       <Footer />
+      <WhatsAppButton />
     </>
   );
 };

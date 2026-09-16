@@ -1,0 +1,23 @@
+# Robots.txt for The Mechtech Solutions
+# Website: https://themechtechsolutions.in/
+
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /assets/
+
+# Prevent indexing duplicate query parameter service URLs (prioritizing clean SEO paths)
+Disallow: /*?*service=
+
+# Specific search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Bingbot
+Allow: /
+
+# XML Sitemap Location
+Sitemap: https://themechtechsolutions.in/sitemap.xml

@@ -1,20 +1,21 @@
+import { siteImages } from "@/assets/data/siteImages";
 import Slider from "react-slick";
 
 const testimonials = [
   {
-    quote: "Mektech.in handled everything from site survey to net metering. Our electricity bill dropped by 85% in the first month. Highly recommended!",
+    quote: "The Mechtech Solutions handled everything from site survey to net metering. Our electricity bill dropped by 85% in the first month. Highly recommended!",
     name: "Rajesh Kumar",
-    role: "Homeowner, Jaipur — 5 kW System",
+    role: "Homeowner, Jaipur - 5 kW System",
   },
   {
     quote: "We installed a 500 kW plant for our factory. The team was professional, on schedule, and the O&M support has been excellent.",
     name: "Priya Sharma",
-    role: "Factory Owner, Pune — 500 kW Plant",
+    role: "Factory Owner, Pune - 500 kW Plant",
   },
   {
     quote: "As a GeM registered supplier, they executed our government solar project with full compliance. Transparent pricing and great execution.",
     name: "Amit Patel",
-    role: "Government Project, Gujarat — 100 kW",
+    role: "Government Project, Gujarat - 100 kW",
   },
 ];
 
@@ -29,7 +30,7 @@ const Testimonial = () => {
     fade: true,
   };
   return (
-    <section className="srex-testimonial-one srex-section">
+    <section className="srex-testimonial-one">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-7 col-12">
@@ -54,7 +55,7 @@ const Testimonial = () => {
           </div>
           <div className="col-lg-5 col-12">
             <div className="srex-testimonial-one__right">
-              <img src="/images/home-one/testimonial/testimonial-right.png" alt="Testimonial" className="srex-testimonial-one__right__img" />
+              <img src={siteImages.testimonial.person} alt="Happy solar customer in India" className="srex-testimonial-one__right__img" />
             </div>
           </div>
         </div>

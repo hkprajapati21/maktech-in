@@ -56,7 +56,9 @@
       // margin-right: -50px;
       height: 780px;
       object-fit: cover;
+      object-position: center;
       width: 100%;
+      border-radius: 20px;
       @media #{$small_mobile} {
         height: 400px;
         margin-right: 0;
@@ -110,6 +112,69 @@
   @media #{$small_mobile} {
     margin-top: 80px;
   }
+
+  &--steps-only {
+    margin-top: 0;
+    padding-top: 20px;
+
+    @media #{$small_mobile} {
+      margin-top: 0;
+      padding-top: 10px;
+    }
+  }
+
+  &__head {
+    max-width: 760px;
+    margin: 0 auto 36px;
+
+    .srex-section__head__badge {
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .srex-section-bottom__right__title {
+      margin-bottom: 16px;
+    }
+
+    .srex-section-bottom__right__desc {
+      margin: 0 auto;
+      max-width: 680px;
+      color: $text-secondary;
+      line-height: 1.65;
+    }
+  }
+
+  &__steps {
+    max-width: 860px;
+    margin: 0 auto;
+
+    .srex-icon-list ul li {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba($text-primary, 0.1);
+
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      i {
+        color: $secondary-color;
+      }
+
+      h3 {
+        margin-bottom: 6px;
+        font-size: 20px;
+        line-height: 1.35;
+      }
+
+      p {
+        margin: 0;
+        color: $text-secondary;
+        line-height: 1.6;
+      }
+    }
+  }
+
   @media #{$tab_device} {
     .row {
       flex-direction: column-reverse;
@@ -127,6 +192,12 @@
       position: absolute;
       left: 65px;
       bottom: 0;
+      max-width: calc(100% - 65px);
+      height: auto;
+      max-height: 520px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 20px;
       @media #{$small_mobile} {
         left: 50px;
         height: 400px;

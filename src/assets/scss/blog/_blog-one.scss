@@ -1,90 +1,157 @@
 .srex-blog-one {
-    margin-top: 120px;
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 12px;
+
     @media #{$small_mobile} {
-        margin-top: 80px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 25px;
     }
-    &__title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+
+    @media #{$tab_device} {
+      gap: 25px;
+    }
+
+    .srex-section__head {
+      @media #{$tab_device} {
+        margin: 0;
         text-align: left;
-        @media #{$small_mobile} {
-            flex-direction: column;
-            gap: 25px;
-        }
-        @media #{$tab_device} {
-            // flex-direction: column;
-            // align-items: flex-start;
-            gap: 25px;
-        }
-
-        .srex-section__head {
-            @media #{$tab_device} {
-                margin: 0;
-                text-align: left;
-            }
-        }
+      }
     }
-    &__post{
-        margin-top: 60px;
-        transition: all 0.3s ease-in-out;
+  }
+
+  &__grid {
+    margin-top: 24px;
+  }
+
+  &__post {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: $white-color;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+
+      .srex-blog-one__post__img::after {
+        width: 100%;
+      }
+
+      .srex-blog-one__post__img img {
+        transform: scale(1.05);
+      }
+
+      h3 a {
+        color: $primary-color;
+      }
+
+      .srex-btn--outline {
+        border-color: $primary-color;
+        background-color: $gray-color;
+        color: $primary-color;
+      }
+    }
+
+    &__img {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        transition: transform 0.4s ease;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 0;
+        background-color: rgba($primary-color, 0.35);
+        transition: width 0.4s ease-in-out;
+      }
+    }
+
+    &__date {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      z-index: 1;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba($white-color, 0.95);
+      color: $text-primary;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    &__body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 24px;
+    }
+
+    &__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-bottom: 14px;
+
+      span {
+        color: $text-secondary;
+        font-size: 13px;
+        line-height: 1.4;
+
         i {
-            transition: all 0.3s ease-in-out;
+          margin-right: 6px;
+          color: $primary-color;
         }
-        
-        &:hover {
-            .srex-blog-one__post__img::after {
-                width: 100%;
-            }
-            i {
-                color: $primary-color;
-            }
-            h3 a {
-                color: $primary-color;
-            }
-            .srex-btn--outline {
-                border-color: $primary-color;
-                background-color: $gray-color;
-                color: $primary-color;
-            }
-        }
-        &__img {
-            position: relative;
-            display: block;
-            overflow: hidden;
-            img {
-                border-radius: 10px;
-                width: 100%;
-            }
-            &::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: -10px;
-                width: 0;
-                height: 100%;
-                background-color: rgb(29 143 44 / 39%);
-                transition: all 0.4s ease-in-out;
-                border-radius: 10px;
-            }
-            
-        }
-        h6 {
-            color: $text-secondary;
-        }
-        h3 {
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        .srex-btn--outline {
-            border-color: $border-gray;
-            &:hover {
-                border-color: $primary-color;
-                background-color: $gray-color;
-                color: $primary-color;
-            }
-        } 
+      }
     }
 
+    h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      line-height: 1.35;
+
+      a {
+        color: inherit;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    p {
+      flex: 1;
+      margin-bottom: 20px;
+      color: $text-secondary;
+      font-size: 15px;
+      line-height: 1.65;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .srex-btn--outline {
+      align-self: flex-start;
+      border-color: $border-gray;
+    }
+  }
 }

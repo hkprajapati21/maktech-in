@@ -1,52 +1,32 @@
-import Isotope from "isotope-layout";
-import { useLayoutEffect, useRef, useState } from "react";
+import { homeProjects } from "@/assets/data/projects";
+import ProjectLightbox from "@/components/shared/ProjectLightbox";
+import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Portfolio = () => {
-  const [isotope, setIsotope] = useState(null);
-  const [filterKey, setFilterKey] = useState("*");
-  const containerRef = useRef(null);
-  const imagesLoaded = useRef(0);
-  const totalImages = useRef(0);
+  const [activeProject, setActiveProject] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const portfolioItems = [
-    { id: 1, category: "solar-pro", title: "Equality and solidarity", image: "/images/portfolio/portfolio-1.png" },
-    { id: 2, category: "power", title: "Windward Renewables", image: "/images/portfolio/portfolio-2.png" },
-    { id: 3, category: "eco-solar", title: "Sun Breeze Power", image: "/images/portfolio/portfolio-3.png" },
-    { id: 4, category: "energy", title: "Wind Whisper Energy", image: "/images/portfolio/portfolio-4.png" },
-  ];
-
-  totalImages.current = portfolioItems.length;
-
-  const handleImageLoad = () => {
-    imagesLoaded.current += 1;
-    if (imagesLoaded.current === totalImages.current) {
-      initIsotope();
-    }
+  const openProject = (project) => {
+    if (!project.images || project.images.length <= 1) return;
+    setActiveProject(project);
+    setActiveIndex(0);
   };
 
-  const initIsotope = () => {
-    if (containerRef.current) {
-      const iso = new Isotope(containerRef.current, {
-        itemSelector: ".filter-item",
-        layoutMode: "fitRows",
-      });
-      setIsotope(iso);
-    }
-  };
+  const closeLightbox = useCallback(() => {
+    setActiveProject(null);
+    setActiveIndex(0);
+  }, []);
 
-  useLayoutEffect(() => {
-    return () => isotope && isotope.destroy();
-  }, [isotope]);
+  const showPrev = useCallback(() => {
+    if (!activeProject) return;
+    setActiveIndex((prev) => (prev === 0 ? activeProject.images.length - 1 : prev - 1));
+  }, [activeProject]);
 
-  useLayoutEffect(() => {
-    if (isotope) {
-      const filter = filterKey === "*" ? "*" : `.${filterKey}`;
-      isotope.arrange({ filter });
-    }
-  }, [isotope, filterKey]);
-
-  const handleFilterKeyChange = (key) => () => setFilterKey(key);
+  const showNext = useCallback(() => {
+    if (!activeProject) return;
+    setActiveIndex((prev) => (prev === activeProject.images.length - 1 ? 0 : prev + 1));
+  }, [activeProject]);
 
   return (
     <section className="srex-portfolio srex-section">
@@ -55,43 +35,45 @@ const Portfolio = () => {
           <div className="srex-section__head ">
             <h5 data-aos="fade-up" className="srex-section__head__badge">
               <img src="/images/badge-icon.svg" alt="Badge Icon" />
-              latest portfolio
+              our projects
             </h5>
             <h2 data-aos="fade-up" data-aos-delay="300" className="srex-section__head__title">
               Embrace the power of the sun with solar energy!
             </h2>
           </div>
         </div>
-        <div className="controls ">
-          <ul id="filters">
-            {["*", "power", "eco-solar", "solar-pro", "energy"].map((key) => (
-              <li key={key} className={`filter ${filterKey === key ? "active" : ""}`} onClick={handleFilterKeyChange(key)}>
-                {key === "*" ? "All" : key.charAt(0).toUpperCase() + key.slice(1).replace("-", " ")}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="row" id="srex-ho-filter" ref={containerRef}>
-          {portfolioItems.map((item) => (
-            <div key={item.id} className={`col-md-6 col-lg-4 col-xl-3 col-12 filter-item ${item.category}`}>
-              <Link to="/project-details">
-                <div className="srex-portfolio__item ">
-                  <img
-                    src={item.image}
-                    alt={`portfolio-${item.id}`}
-                    onLoad={handleImageLoad}
-                    onError={handleImageLoad} // Handle error to avoid getting stuck if an image fails to load
-                  />
-                  <div className="srex-portfolio__item__title">
-                    <h2>{item.id.toString().padStart(2, "0")}</h2>
-                    <h3>{item.title}</h3>
-                  </div>
+        <div className="row" id="srex-ho-filter">
+          {homeProjects.map((item) => {
+            const cover = item.images[0];
+            const hasGallery = item.images.length > 1;
+            return (
+              <div key={item.id} className="col-md-6 col-lg-4 col-12">
+                <div
+                  className={`srex-portfolio__item${hasGallery ? " srex-portfolio__item--gallery" : ""}`}
+                  onClick={() => openProject(item)}
+                  role={hasGallery ? "button" : undefined}
+                  tabIndex={hasGallery ? 0 : undefined}
+                  onKeyDown={(event) => {
+                    if (hasGallery && (event.key === "Enter" || event.key === " ")) openProject(item);
+                  }}
+                >
+                  <img src={cover} alt="Solar project" />
+                  {hasGallery && <span className="srex-portfolio__item__badge">{item.images.length} Photos</span>}
                 </div>
-              </Link>
-            </div>
-          ))}
+              </div>
+            );
+          })}
+        </div>
+        <div className="srex-portfolio__cta" data-aos="fade-up">
+          <Link to="/projects" className="srex-btn srex-btn--primary">
+            View More Projects <i className="fa-solid fa-arrow-right"></i>
+          </Link>
         </div>
       </div>
+
+      {activeProject && (
+        <ProjectLightbox project={activeProject} activeIndex={activeIndex} onClose={closeLightbox} onPrev={showPrev} onNext={showNext} />
+      )}
     </section>
   );
 };

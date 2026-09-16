@@ -4,7 +4,7 @@ import SectionTop from "@/components/shared/SectionTop";
 const Projects = () => {
   return (
     <>
-      <SectionTop title="Projects" />
+      <SectionTop title="Projects" bgImage="/images/projects/projects-banner.jpg" />
       <ProjectList />
     </>
   );

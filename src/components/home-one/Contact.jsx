@@ -1,3 +1,7 @@
+import ContactForm from "@/components/shared/ContactForm";
+import { officePhone, officePhoneDisplay } from "@/assets/data/contact";
+import OfficeAddress from "@/components/shared/OfficeAddress";
+
 const Contact = () => {
   return (
     <section className="srex-contact srex-section">
@@ -5,28 +9,11 @@ const Contact = () => {
         <div className="row">
           <div className="col-lg-6 col-12">
             <div className="srex-contact__left ">
-              <form action="#">
-                <div className="row justify-content-center">
-                  <div className="col-md-6 col-12">
-                    <input name="full-name" placeholder="Your Name" type="text" required />
-                  </div>
-                  <div className="col-md-6 col-12">
-                    <input name="email" placeholder="Email Address" type="text" required />
-                  </div>
-                </div>
-                <div>
-                  <input placeholder="Your Phone" type="text" name="phone" required />
-                </div>
-                <div>
-                  <textarea placeholder="Your Message" id="message" rows="5" name="message" required></textarea>
-                </div>
-                <div>
-                  <button type="button" className="srex-btn srex-btn--secondary">
-                    Submit Now
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </button>
-                </div>
-              </form>
+              <ContactForm
+                subject="Home page contact enquiry - The Mechtech Solutions"
+                submitLabel="Submit Now"
+                showArrow
+              />
             </div>
           </div>
           <div className="col-lg-6 col-12">
@@ -37,29 +24,29 @@ const Contact = () => {
                   Contact US
                 </h5>
                 <h2 data-aos="fade-up" data-aos-delay="300" className="srex-section__head__title ">
-                  Empowering Communities with Solar Energy
+                  Ready to Switch to Solar?
                 </h2>
                 <p data-aos="fade-up" data-aos-delay="400" className="mt-2 mb-4 ">
-                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout It is a long established fact that a
+                  Book your free site survey today and take the first step toward energy independence. We design, install, and maintain solar for homes, businesses, and government projects.
                 </p>
 
-                <div data-aos="fade-up" data-aos-delay="500" className="srex-icon-list">
+                <div data-aos="fade-up" data-aos-delay="500" className="srex-icon-list srex-icon-list--multi-text">
                   <ul>
                     <li className="">
                       <i className="fa-solid fa-phone"></i>
                       <h4>
-                        <a href="tel:+6295550129">(629) 555-0129</a>
+                        <a href={`tel:${officePhone}`}>{officePhoneDisplay}</a>
                       </h4>
                     </li>
                     <li className="">
                       <i className="fa-solid fa-envelope"></i>
                       <h4>
-                        <a href="mailto:info@example.com">info@example.com</a>
+                        <a className="contact-email" href="mailto:project@themechtechsolutions.in">project@themechtechsolutions.in</a>
                       </h4>
                     </li>
                     <li className="">
                       <i className="fa-solid fa-location-dot"></i>
-                      <h4>6391 Elgin St. Celina, 10299</h4>
+                      <OfficeAddress />
                     </li>
                   </ul>
                 </div>

@@ -1,4 +1,6 @@
+import { officePhone, officePhoneDisplay } from "@/assets/data/contact";
 import { menu } from "@/assets/data/menu";
+import OfficeAddress from "@/components/shared/OfficeAddress";
 import { useState } from "react";
 import AnimateHeight from "react-animate-height";
 import { Link } from "react-router-dom";
@@ -25,7 +27,7 @@ const Header = () => {
           <nav className="ud-main-menu ud-main-menu--home-one d-flex align-items-center justify-content-between" aria-label="Main Navigation">
             <div className="ud-main-menu__logo">
               <Link to="/">
-                <img src="/images/mechtech.svg" alt="Mechtech Solutions" />
+                <img src="/images/mechtech.svg" alt="The Mechtech Solutions" />
               </Link>
             </div>
             <ul className="ud-main-menu__links d-none d-lg-flex">
@@ -62,7 +64,7 @@ const Header = () => {
               <div>
                 <span>Need help?</span>
                 <h4>
-                  <a href="tel:+3075550133">(307) 555-0133</a>
+                  <a href={`tel:${officePhone}`}>{officePhoneDisplay}</a>
                 </h4>
               </div>
             </div>
@@ -73,7 +75,7 @@ const Header = () => {
         <div className={`ud-side-popup ud-side-popup--home-one ${menuOpen && "ud-side-popup--open"}`}>
           <div className="ud-side-popup__header">
             <div className="ud-side-popup__header-logo">
-              <img src="/images/mechtech.svg" alt="Mechtech Solutions" />
+              <img src="/images/mechtech.svg" alt="The Mechtech Solutions" />
             </div>
             <button onClick={() => setMenuOpen(false)} className="side-popup-close">
               <i className="fa-solid fa-xmark"></i>
@@ -112,15 +114,15 @@ const Header = () => {
                 <div className="ud-header-info-box__details">
                   <span>Need Help?</span>
                   <h4>
-                    <a href="tel:+3075550133">(307) 555-0133</a>
+                    <a href={`tel:${officePhone}`}>{officePhoneDisplay}</a>
                   </h4>
                 </div>
               </div>
-              <div className="ud-side-popup__bottom-info-box d-flex align-items-center gap-3 py-0 m-0">
-                <i className="fa-solid fa-paper-plane"></i>
+              <div className="ud-side-popup__bottom-info-box d-flex align-items-start gap-3 py-0 m-0">
+                <i className="fa-solid fa-location-dot"></i>
                 <div className="ud-header-info-box__details">
-                  <span>Shreekol, Dublia Bazar</span>
-                  <h4>Pabna, Bangladesh</h4>
+                  <span>Office Address</span>
+                  <OfficeAddress Tag="h4" className="office-address" />
                 </div>
               </div>
               <div className="ud-side-popup__bottom-info-box d-flex align-items-center gap-3 py-0 m-0">
@@ -128,29 +130,24 @@ const Header = () => {
                 <div className="ud-header-info-box__details">
                   <span>Send email</span>
                   <h4>
-                    <a href="mailto:hello@example.com">hello@example.com</a>
+                    <a className="contact-email" href="mailto:project@themechtechsolutions.in">project@themechtechsolutions.in</a>
                   </h4>
                 </div>
               </div>
             </div>
             <ul className="ud-side-popup__bottom-socials">
               <li>
-                <a href="#">
+                <a href="https://www.facebook.com/share/199QbUrGzJ/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                   <i className="fa-brands fa-facebook-f"></i>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <i className="fa-brands fa-x-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
+                <a href="https://www.instagram.com/themechtechsolution.408?igsh=aHpuOHNudXJmanpp" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <i className="fa-brands fa-instagram"></i>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="#" aria-label="YouTube">
                   <i className="fa-brands fa-youtube"></i>
                 </a>
               </li>

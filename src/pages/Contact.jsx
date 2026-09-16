@@ -1,102 +1,118 @@
+import {
+  officeMapEmbedUrl,
+  officePhone,
+  officePhoneDisplay,
+  officePhoneSecondary,
+  officePhoneSecondaryDisplay,
+  whatsappLink,
+  whatsappPhoneDisplay,
+} from "@/assets/data/contact";
+import ContactForm from "@/components/shared/ContactForm";
+import OfficeAddress from "@/components/shared/OfficeAddress";
 import SectionTop from "@/components/shared/SectionTop";
+
+const contactDetails = [
+  {
+    icon: "fa-location-dot",
+    title: "Address",
+    content: <OfficeAddress />,
+  },
+  {
+    icon: "fa-envelope",
+    title: "Email Address",
+    content: (
+      <p>
+        <a className="contact-email" href="mailto:project@themechtechsolutions.in">
+          project@themechtechsolutions.in
+        </a>
+      </p>
+    ),
+  },
+  {
+    icon: "fa-phone",
+    title: "Call Us",
+    content: (
+      <p>
+        <a href={`tel:${officePhone}`}>{officePhoneDisplay}</a>,{" "}
+        <a href={`tel:${officePhoneSecondary}`}>{officePhoneSecondaryDisplay}</a>
+      </p>
+    ),
+  },
+  {
+    icon: "fa-brands fa-whatsapp",
+    title: "WhatsApp",
+    content: (
+      <p>
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          {whatsappPhoneDisplay}
+        </a>
+      </p>
+    ),
+  },
+];
 
 const Contact = () => {
   return (
     <>
       <SectionTop title="Contact Us" />
 
-      {/* <!-- Contact Section Start --> */}
-      <section className="srex-contact--three srex-contact">
+      <section className="srex-contact-page">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-6 col-12">
-              <div className="srex_contact_address">
-                <div className="srex_contact_content">
-                  <h4>- Information</h4>
-                  <h1>Get In touch</h1>
-                  <p>For your car we will do everything advice, repairs and maintenance. We are the some preferred choice by many car owners because our experience </p>
-                </div>
-                <div className="srex-single-address">
-                  <div className="address_icon">
-                    <i className="fa-solid fa-location-dot"></i>
-                  </div>
-                  <h4>Address</h4>
+          <div className="row g-4 align-items-stretch">
+            <div className="col-lg-6">
+              <div className="srex-contact-page__card">
+                <div className="srex-contact-page__intro">
+                  <span className="srex-contact-page__eyebrow">- Information</span>
+                  <h2 className="srex-contact-page__title">Get In touch</h2>
                   <p>
-                    Dhaka 1216. Chipa golli. gele e khobar ache. <br />
-                    na gele aro valo{" "}
+                    Ready to switch to solar? Book your free site survey today and take the first step toward energy
+                    independence. Our team is here to help with residential, commercial, and government projects.
                   </p>
                 </div>
-                <div className="srex-single-address">
-                  <div className="address_icon">
-                    <i className="fa-solid fa-envelope"></i>
-                  </div>
-                  <h4>Email Address</h4>
-                  <p>example@yourmail.com</p>
-                  <p>admin@yourmail.com</p>
-                </div>
-                <div className="srex-single-address">
-                  <div className="address_icon">
-                    <i className="fa-solid fa-phone"></i>
-                  </div>
-                  <h4>Phone</h4>
-                  <p>+880 0184725965 </p>
-                  <p>24 Hours open </p>
+
+                <div className="srex-contact-page__details">
+                  {contactDetails.map((item) => (
+                    <div className="srex-contact-page__detail" key={item.title}>
+                      <div className="srex-contact-page__detail-icon">
+                        <i className={`fa-solid ${item.icon}`}></i>
+                      </div>
+                      <div className="srex-contact-page__detail-content">
+                        <h4>{item.title}</h4>
+                        {item.content}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 col-12">
-              <div className="srex-contact__left srex_contact_address ">
-                <div className="srex_contact_content">
-                  <h4>- Message Us</h4>
-                  <h1>Send Us Message</h1>
+
+            <div className="col-lg-6">
+              <div className="srex-contact-page__card srex-contact-page__form">
+                <div className="srex-contact-page__intro">
+                  <span className="srex-contact-page__eyebrow">- Message Us</span>
+                  <h2 className="srex-contact-page__title">Send Us Message</h2>
                 </div>
-                <form action="#">
-                  <div className="row justify-content-center">
-                    <div className="col-md-12 col-12">
-                      <input name="full-name" placeholder="Your Name" type="text" required />
-                    </div>
-                    <div className="col-md-12 col-12">
-                      <input name="email" placeholder="Email Address" type="text" required />
-                    </div>
-                  </div>
-                  <div className="row justify-content-center">
-                    <div className="col-md-12 col-12">
-                      <input placeholder="Your Phone" type="text" name="phone" required />
-                    </div>
-                  </div>
-                  <div>
-                    <textarea placeholder="Your Message" id="message" rows="5" name="message" required></textarea>
-                  </div>
-                  <div>
-                    <button type="button" className="srex-btn srex-btn--secondary">
-                      Send A Message
-                    </button>
-                  </div>
-                </form>
+
+                <ContactForm subject="Contact form enquiry - The Mechtech Solutions" submitLabel="Send A Message" />
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* <!-- Contact Section End --> */}
 
-      <div className="map_area">
+      <section className="srex-contact-page__map">
         <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.957183635167!2d-74.00402768559431!3d40.71895904512855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598a1316e7a7%3A0x47bb20eb6074b3f0!2sNew%20Work%20City%20-%20(CLOSED)!5e0!3m2!1sbn!2sbd!4v1600305497356!5m2!1sbn!2sbd"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  aria-hidden="false"
-                  tabIndex="0"
-                ></iframe>
-              </div>
-            </div>
+          <div className="srex-contact-page__map-inner">
+            <iframe
+              src={officeMapEmbedUrl}
+              allowFullScreen=""
+              aria-hidden="false"
+              tabIndex="0"
+              title="The Mechtech Solutions office - Silvassa"
+            ></iframe>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

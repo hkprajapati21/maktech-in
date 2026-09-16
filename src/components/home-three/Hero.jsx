@@ -1,3 +1,5 @@
+import { siteImages } from "@/assets/data/siteImages";
+
 const Hero = () => {
   return (
     <section className="srex-hero-three relative">
@@ -19,7 +21,7 @@ const Hero = () => {
           </div>
           <div className="col-lg-6 col-12">
             <div data-aos="fade-up" data-aos-delay="700" className="srex-hero-three__right ">
-              <img src="/images/home-three/hero-right.png" className="img-fluid" alt="Man" />
+              <img src={siteImages.hero.person} className="img-fluid" alt="Solar expert in India" />
             </div>
           </div>
         </div>

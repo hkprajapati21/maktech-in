@@ -1,19 +1,28 @@
 .section-top {
   padding-top: 60px;
   position: relative;
-  background: url(/images/breadcum-bg.jpg);
+  background: url(/images/projects/projects-banner.jpg);
   background-size: cover;
   background-position: center;
   padding-bottom: 60px;
 }
 .section-top::before {
-  content: "";
-  height: 100%;
-  opacity: 0.5;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  background: #f8f7f0;
+    content: "";
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background: #f8f7f0;
+}
+.section-top--custom-bg::before {
+  opacity: 0.65;
+  background: #0b1f14;
+}
+.section-top--custom-bg .section-top-title h1,
+.section-top--custom-bg .section-top-title ul li,
+.section-top--custom-bg .section-top-title ul li a {
+  color: #fff !important;
 }
 .section-top-title {
   position: relative;

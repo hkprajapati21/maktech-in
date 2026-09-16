@@ -1,3 +1,4 @@
+import { officePhone, officePhoneDisplay } from "@/assets/data/contact";
 import { Link } from "react-router-dom";
 
 const Newsletter = () => {
@@ -18,7 +19,7 @@ const Newsletter = () => {
                 <Link to="/contact" className="srex-btn srex-btn--primary">
                   Get Free Survey <i className="fa-solid fa-plus"></i>
                 </Link>
-                <a href="tel:+919876543210" className="srex-btn srex-btn--outline">
+                <a href={`tel:${officePhone}`} className="srex-btn srex-btn--outline">
                   Call Now <i className="fa-solid fa-phone"></i>
                 </a>
               </div>

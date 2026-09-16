@@ -1,16 +1,21 @@
 .srex-testimonial-one {
   position: relative;
   background-color: $gray-color;
-  margin-top: 100px;
+  margin-top: 40px;
+  padding-bottom: 80px;
   background-image: url(/images/testimonial-bg.png);
   background-repeat: no-repeat;
   background-position: left center;
+
   @media #{$small_mobile} {
-    margin-top: 0px;
+    margin-top: 0;
+    padding-bottom: 50px;
   }
   @media #{$tab_device} {
-    margin-top: 0px;
+    margin-top: 0;
+    padding-bottom: 60px;
   }
+
   .row {
     align-items: center;
   }
@@ -18,88 +23,108 @@
   &__left {
     position: relative;
     z-index: 9;
+
     .srex-section__head {
-      padding-top: 80px;
+      padding-top: 40px;
+
       @media #{$small_mobile} {
-        padding-top: 40px;
+        padding-top: 24px;
       }
-      @media #{$tab_device} {
-        padding-top: 40px;
+
+      .srex-section__head__title {
+        font-size: 34px;
+        line-height: 1.25;
+
+        @media #{$small_mobile} {
+          font-size: 26px;
+        }
       }
     }
   }
 
   &__slider {
-    margin-top: 60px;
+    margin-top: 28px;
+
     @media #{$small_mobile} {
-      margin-top: 40px;
+      margin-top: 20px;
     }
-    @media #{$tab_device} {
-      margin-top: 40px;
-    }
+
     &__item {
       background-color: $primary-color;
       color: $white-color;
-      padding: 70px 60px;
-      border-radius: 20px;
+      padding: 36px 32px 48px;
+      border-radius: 16px;
       background-image: url(/images/plant.svg);
       background-repeat: no-repeat;
       background-position: center center;
+      background-size: 140px;
+
       @media #{$small_mobile} {
-        padding: 40px 30px;
+        padding: 28px 22px 42px;
       }
+
       &__quote {
-        height: 60px;
-        width: 60px;
-        margin-bottom: 30px;
-        @media #{$small_mobile} {
-          height: 40px;
-          width: 40px;
-          margin-bottom: 20px;
-        }
+        height: 36px;
+        width: 36px;
+        margin-bottom: 16px;
       }
+
       &__text {
-        font-size: 25px;
-        line-height: 40px;
+        font-size: 18px;
+        line-height: 1.55;
         color: $white-color;
         font-weight: 500;
-        margin-bottom: 30px;
+        margin-bottom: 18px;
+        max-width: 95%;
+
         @media #{$small_mobile} {
-          font-size: 20px;
-          line-height: 30px;
-          margin-bottom: 20px;
+          font-size: 16px;
+          line-height: 1.5;
+          margin-bottom: 14px;
         }
       }
 
       &__author {
         h3 {
-          margin-bottom: 5px;
+          margin-bottom: 4px;
+          font-size: 18px;
         }
+
         h3,
         p {
           color: $white-color;
         }
+
+        p {
+          font-size: 14px;
+          margin: 0;
+        }
       }
     }
+
     .slick-dots {
-      bottom: 70px;
-      right: 70px;
+      bottom: 18px;
+      right: 28px;
       width: auto;
+
       @media #{$small_mobile} {
-        bottom: 40px;
-        right: 40px;
+        bottom: 14px;
+        right: 18px;
       }
+
       li {
         button {
           background-color: transparent;
-          width: 10px;
-          height: 10px;
+          width: 8px;
+          height: 8px;
           border-radius: 50%;
           border: 1px solid $white-color;
+
           &::before {
             display: none;
           }
         }
+
         &.slick-active {
           button {
             background-color: $white-color;
@@ -111,23 +136,35 @@
 
   &__right {
     position: absolute;
-    top: -90px;
+    top: -40px;
     right: 0;
+    max-width: 420px;
+
     @media #{$small_mobile} {
       position: unset;
+      max-width: 100%;
+      margin-top: 24px;
     }
     @media #{$tab_device} {
       position: unset;
+      max-width: 100%;
+      margin-top: 24px;
     }
+
     img {
       width: 100%;
-      border-top-left-radius: 40px;
-      border-bottom-left-radius: 40px;
+      max-height: 420px;
+      object-fit: cover;
+      border-top-left-radius: 28px;
+      border-bottom-left-radius: 28px;
+
       @media #{$small_mobile} {
-        border-radius: 20px;
+        border-radius: 16px;
+        max-height: 280px;
       }
       @media #{$tab_device} {
-        border-radius: 20px;
+        border-radius: 16px;
+        max-height: 320px;
       }
     }
   }

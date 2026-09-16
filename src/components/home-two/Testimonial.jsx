@@ -122,7 +122,7 @@ const Testimonial = () => {
           <div className="col-12 col-lg-6 col-md-12">
             <div className="srex-testimonial-two__right ">
               <img src="/images/home-two/testimonial-r-shape.png" alt="Shape" />
-              <img className="srex-testimonial-two__right__img " data-src="/images/home-two/testimonial/man.png" src="/images/about-us/about-us-bottom.png" alt="testimonial-man-img" />
+              <img className="srex-testimonial-two__right__img " data-src={siteImages.testimonial.person} src={siteImages.testimonial.person} alt="Solar customer in India" />
               <div className="srex-testimonial-two__right__badge">
                 <img src="/images/flag.png" alt="Flag" />
                 <h3>
